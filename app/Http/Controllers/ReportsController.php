@@ -74,7 +74,7 @@ class ReportsController extends Controller
     {
         return view('report.FineSearch',[
             'readers' => reader::where('alias', 'like', '%'.build_alias($request['keyword']).'%')
-            ->orWhere('username', 'like', '%'.$request['keyword'].'%')
+            ->orWhere('name', 'like', '%'.$request['keyword'].'%')
             ->get(),
             'bookIssues' => '',
             'keyword' => $request['keyword']
