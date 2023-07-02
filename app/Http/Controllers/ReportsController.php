@@ -87,7 +87,7 @@ class ReportsController extends Controller
             'readers' => reader::where('alias', 'like', '%'.build_alias($request['keyword']).'%')
             ->orWhere('username', 'like', '%'.$request['keyword'].'%')
             ->get(),
-            'bookIssues' => book_issue::where('reader_id', $request['id'])->where('find', '<>', 0)->get(),
+            'bookIssues' => book_issue::where('reader_id', $request['id'])->where('fine', '<>', 0)->get(),
             'keyword' => $request['keyword']
         ]);
     }
